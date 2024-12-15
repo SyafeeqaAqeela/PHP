@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Explorer's Journey</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        body {
+            background: url('space.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 50px;
+            position: relative;
+            z-index: 2;
+            font-family: 'Space Mono', monospace; /* Apply Space Mono font to headings */
+            font-size: 3rem; /* Increased font size for heading */
+        }
+        p, .story {
+            position: relative;
+            z-index: 2;
+            font-family: 'Quicksand', sans-serif; /* Apply Quicksand font */
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.6;
+        }
+        .door-container {
+            display: flex;
+            justify-content: center;
+            gap: 100px; /* Further increased gap between doors */
+            margin-top: 50px;
+            z-index: 2;
+            position: relative;
+        }
+        .door {
+            width: 200px; /* Adjusted width */
+            height: 350px; /* Adjusted height */
+            background: url('doorclose.png') no-repeat center center;
+            background-size: contain; /* Ensures full image fits */
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+            position: relative;
+        }
+        .door:hover {
+            background: url('doorsemiopen.png') no-repeat center center;
+            background-size: contain;
+            width: 200px; /* Keep dimensions consistent */
+            height: 350px;
+        }
+        .door.clicked {
+            background: url('dooropen.png') no-repeat center center;
+            background-size: contain;
+        }
+        .location {
+            margin-top: 10px;
+            font-family: 'Space Mono', monospace; /* Use heading font */
+            font-size: 1.5rem; /* Adjust text size */
+            text-align: center; /* Center text below door */
+        }
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            font-family: 'Quicksand', sans-serif;
+            text-align: center;
+        }
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function openDoor(element, link) {
+            element.classList.add('clicked');
+            setTimeout(() => {
+                window.location.href = link;
+                element.classList.remove('clicked'); // Reset to close after click
+            }, 500); // Wait 0.5s before navigating
+        }
+    </script>
+</head>
+<body>
+    <h1>🚀 Space Explorer's Journey 🚀</h1>
+    <p class="story">In a faraway galaxy, you, the fearless space explorer, have ventured into the uncharted regions of the cosmos. After days of navigating through nebulae and asteroid fields, you stumble upon a mysterious space station. Inside, you discover three ancient portals, each leading to a different world. Will you venture to the fiery landscapes, uncover crystal secrets, or dive into the depths of an oceanic realm? The choice is yours.</p>
+    <p>Choose a portal to <b>explore</b> different planets:</p>
+    <div class="door-container">
+        <div>
+            <div class="door" onclick="openDoor(this, 'fire.php')"></div>
+            <div class="location">Planet of Fire</div>
+        </div>
+        <div>
+            <div class="door" onclick="openDoor(this, 'crystal.php')"></div>
+            <div class="location">Crystal Moon</div>
+        </div>
+        <div>
+            <div class="door" onclick="openDoor(this, 'ocean.php')"></div>
+            <div class="location">Ocean World</div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Space Explorer. Made with 🚀 by <a href="https://syafeeqaaqeela.github.io/SyafeeqaAqeela/">Syafeeqa Aqeela</a></p>
+    </footer>
+</body>
+</html>
