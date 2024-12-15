@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "PHP"
+    "liveServer.settings.multiRootWorkspaceName": "PHP",
+    "liveServer.settings.port": 5502
 }
